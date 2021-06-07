@@ -33,7 +33,7 @@ function updateFilters() {
     let changedFilter = d3.select(this);
 
     // 4b. Save the value that was changed as a variable.
-    let changedFilterVal = changedFilter.property("value");
+    let changedFilterVal = changedFilter.property("value").toLowerCase();
 
     // 4c. Save the id of the filter that was changed as a variable.
     let changedFilterId = changedFilter.property("id");
@@ -58,8 +58,6 @@ function updateFilters() {
             value: changedFilterVal
         });
     }
-
-    console.log(filters);
 
     // 6. Call function to apply all filters and rebuild the table
     filterTable();
